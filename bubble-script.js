@@ -1,4 +1,4 @@
-const CHAT_BUTTON_SIZE = 50; // size of the chat button in pixels
+const CHAT_BUTTON_SIZE = 52; // size of the chat button in pixels
 const CHAT_BUTTON_RADIUS = CHAT_BUTTON_SIZE / 2; // radius of the chat button in pixels
 const CHAT_BUTTON_BACKGROUND_COLOR = "#1c4ed8"; // background color of the chat button
 const scriptTag = document.currentScript;
