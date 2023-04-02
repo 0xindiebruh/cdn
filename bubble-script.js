@@ -26,9 +26,11 @@ chatButton.style.transition = "all .2s ease-in-out";
 
 chatButton.addEventListener("mouseenter", (event) => {
   chatButton.style.transform = "scale(1.05)";
+  chatButton.style.opacity = '.9'
 });
 chatButton.addEventListener("mouseleave", (event) => {
   chatButton.style.transform = "scale(1)";
+  chatButton.style.opacity = '1'
 });
 
 // create the chat button icon element
