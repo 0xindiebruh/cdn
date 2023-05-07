@@ -17,8 +17,8 @@ const chatButton = document.createElement('div')
 // apply styles to the chat button
 chatButton.setAttribute('id', 'chatbase-bubble-button')
 chatButton.style.position = 'fixed'
-chatButton.style.bottom = '40px'
-chatButton.style.right = '40px'
+chatButton.style.bottom = '30px'
+chatButton.style.right = '30px'
 chatButton.style.width = CHAT_BUTTON_SIZE + 'px'
 chatButton.style.height = CHAT_BUTTON_SIZE + 'px'
 chatButton.style.borderRadius = CHAT_BUTTON_RADIUS + 'px'
@@ -57,7 +57,7 @@ chatButton.appendChild(chatButtonIcon)
 // toggle the chat component when the chat button is clicked
 chatButton.addEventListener('click', () => {
   // toggle the chat component
-  if (chat.style.display === 'none') {
+  if (chat.style.display == 'none') {
     chat.style.display = 'flex'
     chatButtonIcon.innerHTML = CLOSE_CHAT_ICON
   } else {
@@ -73,11 +73,11 @@ chat.style.position = 'fixed'
 chat.style.flexDirection = 'column'
 chat.style.justifyContent = 'space-between'
 chat.style.bottom = '100px'
-chat.style.right = '40px'
+chat.style.right = '30px'
 chat.style.width = '85vw'
 chat.style.height = '70vh'
 chat.style.boxShadow =
-  'rgba(150, 150, 150, 0.15) 0px 6px 24px 0px, rgba(150, 150, 150, 0.15) 0px 0px 0px 1px'
+  '0 6px 6px 0 rgba(0,0,0,.02),0 8px 24px 0 rgba(0,0,0,.12)'
 chat.style.display = 'none'
 chat.style.borderRadius = '10px'
 chat.style.zIndex = 999999999
@@ -98,8 +98,8 @@ const mediaQuery = window.matchMedia('(min-width: 550px)')
 function handleChatWindowSizeChange(e) {
   // Check if the media query is true
   if (e.matches) {
-    chat.style.height = '600px'
-    chat.style.width = '400px'
+    chat.style.height = '550px'
+    chat.style.width = '360px'
   }
 }
 
@@ -128,6 +128,7 @@ const getChatButtonColor = async () => {
 window.addEventListener('keydown', function (e) {
   if (e.key == 'Escape') {
     chat.style.display = 'none'
+    chat.style.opacity = 0
     chatButtonIcon.innerHTML = CHAT_BUTTON_ICON
   }
 })
@@ -135,6 +136,7 @@ window.addEventListener('keydown', function (e) {
 window.onmessage = function (d) {
   if (d.data?.message?.which == 27) {
     chat.style.display = 'none'
+    chat.style.opacity = 0
     chatButtonIcon.innerHTML = CHAT_BUTTON_ICON
   }
 }
