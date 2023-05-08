@@ -128,7 +128,6 @@ const getChatButtonColor = async () => {
 window.addEventListener('keydown', function (e) {
   if (e.key == 'Escape') {
     chat.style.display = 'none'
-    chat.style.opacity = 0
     chatButtonIcon.innerHTML = CHAT_BUTTON_ICON
   }
 })
@@ -136,7 +135,6 @@ window.addEventListener('keydown', function (e) {
 window.onmessage = function (d) {
   if (d.data?.message?.which == 27) {
     chat.style.display = 'none'
-    chat.style.opacity = 0
     chatButtonIcon.innerHTML = CHAT_BUTTON_ICON
   }
 }
